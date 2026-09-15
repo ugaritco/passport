@@ -1,0 +1,5 @@
+providers:
+  - Ugarit\Passport\PassportServiceProvider
+
+migrations:
+  - database/migrations

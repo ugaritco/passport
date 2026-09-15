@@ -1,0 +1,84 @@
+{
+    "name": "ugarit/passport",
+    "description": "Ugarit Passport provides OAuth2 server support to Ugarit.",
+    "keywords": [
+        "ugarit",
+        "passport",
+        "oauth"
+    ],
+    "license": "MIT",
+    "support": {
+        "issues": "https://github.com/ugarit/passport/issues",
+        "source": "https://github.com/ugarit/passport"
+    },
+    "authors": [
+        {
+            "name": "Muath R Abu Ouda",
+            "email": "muathrabuouda@hotmail.com",
+            "role": "Vision Leader of Ugarit"
+        },
+        {
+            "name": "Taylor Otwell",
+            "email": "taylor@laravel.com",
+            "role": "Original Creator & Primary Developer"
+        }
+    ],
+    "require": {
+        "php": "^8.2",
+        "ext-json": "*",
+        "ext-openssl": "*",
+        "firebase/php-jwt": "^6.4|^7.0",
+        "heritage/auth": "^1.00.00",
+        "heritage/console": "^1.00.00",
+        "heritage/container": "^1.00.00",
+        "heritage/contracts": "^1.00.00",
+        "heritage/cookie": "^1.00.00",
+        "heritage/database": "^1.00.00",
+        "heritage/encryption": "^1.00.00",
+        "heritage/http": "^1.00.00",
+        "heritage/support": "^1.00.00",
+        "league/oauth2-server": "^9.2",
+        "php-http/discovery": "^1.20",
+        "phpseclib/phpseclib": "^4.0",
+        "psr/http-factory-implementation": "*",
+        "symfony/console": "^7.1|^8.0",
+        "symfony/psr-http-message-bridge": "^7.1|^8.0"
+    },
+    "require-dev": {
+        "orchestra/testbench": "^9.15|^10.8|^11.0",
+        "phpstan/phpstan": "^2.0"
+    },
+    "autoload": {
+        "psr-4": {
+            "Ugarit\\Passport\\": "src/",
+            "Ugarit\\Passport\\Database\\Factories\\": "database/factories/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Ugarit\\Passport\\Tests\\": "tests/",
+            "Workbench\\App\\": "workbench/app/",
+            "Workbench\\Database\\Factories\\": "workbench/database/factories/"
+        }
+    },
+    "extra": {
+        "ugarit": {
+            "providers": [
+                "Ugarit\\Passport\\PassportServiceProvider"
+            ]
+        }
+    },
+    "config": {
+        "sort-packages": true,
+        "allow-plugins": {
+            "php-http/discovery": false
+        }
+    },
+    "scripts": {
+        "post-autoload-dump": "@prepare",
+        "prepare": "@php vendor/bin/testbench package:discover --ansi"
+    },
+    "minimum-stability": "dev",
+    "prefer-stable": true,
+    "version": "1.00.00"
+}
